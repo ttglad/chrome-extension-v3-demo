@@ -1,0 +1,43 @@
+{
+    "name": "ttglad-demo",
+    "description": "ttglad-demo for chrome extension mv3",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "img/icon_16x16.png",
+        "32": "img/icon_32x32.png",
+        "48": "img/icon_48x48.png",
+        "128": "img/icon_128x128.png"
+    },
+    "action": {
+        "default_popup": "html/popup.html",
+        "default_icon": "img/icon_128x128.png",
+        "default_title": "a default title"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "js/test.js"
+            ],
+            "matches": [
+                "*://*.jianshu.com/*"
+            ]
+        }
+    ],
+    "externally_connectable": {
+        "matches": [
+            "*://*.jianshu.com/*"
+        ]
+    },
+    "permissions": [
+        "tabs",
+        "notifications",
+        "storage"
+    ],
+    "host_permissions": [
+        "*://*.jianshu.com/*"
+    ]
+}
